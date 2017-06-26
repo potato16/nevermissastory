@@ -57,16 +57,4 @@ object ITisPoTato: OMGWhatisTHis{
     Companion
  */
 
-fun main(args: Array<String>) {
-    val fox1 = WhatFoxSay()
-    fox1.playSound(object : OMGWhatisTHis{
-        override fun playTheGame() {
-            println("This is example of Object Expressions and Declarations Game of Thrones")
-        }
-    })
-    println(ab.y)
-    val isFun = NOFunITisNOTfunny()
-    // Object Declarations
-    println("Thu cong thu xem sao:3 + 2 ="+Pheptinh.cong(3,2))
-    ITisPoTato.playTheGame()
-}
+
