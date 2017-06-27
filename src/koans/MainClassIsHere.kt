@@ -30,9 +30,50 @@ fun main(args: Array<String>) {
     */
 
     //println(arrayListOf(1,5,2).sortedDescending())
-    val point = Point(10,20)
-    println(-point)
+   // val point = Point(10,20)
+   // println(-point)
+   // forLoopPractice()
+   // 1()
+    playWithListofPoints()
+
 }
 data class Point(val x:Int, val y: Int)
 operator fun Point.unaryMinus() = Point(-x,-y)
 
+
+/**
+For loop
+ */
+fun forLoopPractice(){
+    for (x in 1..10) print(x.toString()+ " ")
+
+}
+/**
+ * Invoke
+ */
+operator fun Int.invoke(){println("What do you want")}
+
+/**
+        List
+        */
+fun playWithListofPoints(){
+    var listPoints =  ArrayList<Point>()
+    listPoints.add(Point(34,22))
+    listPoints.add(Point(34,2))
+    listPoints.add(Point(54,23))
+    var listX = ArrayList<Int>()
+    for((x,_) in listPoints){
+        listX.add(x)
+    }
+    print(listX.last())
+    //better way
+    //val listY = listPoints.filter { point->point.y }
+    val chk: Boolean = listPoints.all{it.x ==12}
+    val chk2: Boolean = listPoints.any{it.x ==12}
+    val chk3: Int = listPoints.count{it.x ==12}
+    val chk4: Point? = listPoints.find{it.x ==12}
+    println(chk.toString()+chk2.toString()+chk3.toString()+chk4.toString())
+    val sortedList: List<Point> =listPoints.sortedBy{it.x}
+    val sum : Int = listPoints.sumBy { it.x }
+    val haha: Map<Int,List<Point>> = listPoints.groupBy { it.x }
+}
